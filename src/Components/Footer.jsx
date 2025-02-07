@@ -4,11 +4,11 @@ import {
   faFacebook,
   faLinkedin,
   faTwitter,
-} from "@fortawesome/free-brands-svg-icons"; 
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <div className="w-full h-[410px] pt-7 bg-[#101323] mt-150 md:flex-nowrap ">
+    <div className="w-full  pt-7 bg-[#101323] mt-150 md:flex-nowrap  ">
       <div className="flex justify-between pr-16 flex-wrap md:flex-nowrap">
         <div className="w-full md:w-auto">
           <h1 className="text-white text-2xl font-bold pl-16">
@@ -35,18 +35,18 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="w-full md:w-auto mb-6 md:mb-0">
+        <div className="w-full md:w-auto mb-6 md:mb-0 text font-bold ">
           <ul>
-            <li>product</li>
+            <li className="text-xl">product</li>
             <li>Overview</li>
             <li>features</li>
             <li>pricing</li>
           </ul>
         </div>
 
-        <div className="w-full md:w-auto mb-6 md:mb-0">
+        <div className="w-full md:w-auto mb-6 md:mb-0 font-bold">
           <ul>
-            <li>Service</li>
+            <li className="text-xl">Service</li>
             <li>Category1</li>
             <li>Category2</li>
             <li>Category3</li>
@@ -54,7 +54,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="w-full md:w-auto mb-6 md:mb-0">
+        <div className="w-full md:w-auto mb-6 md:mb-0 font-bold">
           <ul>
             <li>Company</li>
             <li>About Us</li>
@@ -64,7 +64,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="w-full md:w-auto mb-6 md:mb-0">
+        <div className="w-full md:w-auto mb-6 md:mb-0 font-bold">
           <ul>
             <li>Blog</li>
             <li>Events</li>

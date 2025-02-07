@@ -11,6 +11,7 @@ import {
 import job from "../assets/images/job.png";
 import EmployersLogo from "../assets/images/Employers Logo.png";
 import { useState } from "react";
+
 <img src={EmployersLogo} alt="Employer Logo" className="w-16 h-16" />;
 
 const categories = [
@@ -55,6 +56,47 @@ const categories = [
     icon: <BiData className="text-blue-500 text-4xl " />,
   },
 ];
+
+const stats = [
+  {
+    image: "/assets/images/Icon(2).png",  // Make sure the image path is correct
+    number: "97,354",
+    label: "Companies",
+  },
+  
+
+  {
+    image:"/assets/images/Icon(2).png",
+    number: "97,354",
+    label: "Companies",
+  },
+  {
+    image: "/assets/images/Icon(1).png",
+    number: "38,47,154",
+    label: "Candidates",
+  },
+  { image: "/assets/images/Icon(1).png", number: "7,532", label: "New Jobs" },
+];
+
+
+const jobCategories = [
+  { title: "Anesthesiologists", positions: "45,904 Open Positions" },
+  { title: "Surgeons", positions: "50,364 Open Positions" },
+  { title: "Obstetricians-Gynecologists", positions: "4,339 Open Positions" },
+  { title: "Orthodontists", positions: "20,079 Open Positions" },
+  { title: "Maxillofacial Surgeons", positions: "74,875 Open Positions" },
+  { title: "Softwear Developer", positions: "43359 Open Positions" },
+  { title: "Psychiatrists", positions: "18,599 Open Positions" },
+  { title: "Data Scientist", positions: "28,200 Open Positions" },
+  { title: "Financial Manager", positions: "61,391 Open Positions" },
+  { title: "Management Analysis", positions: "93,046 Open Positions" },
+  { title: "IT Manager", positions: "50,963 Open Positions" },
+  { title: "Operations Research Analysis", positions: "16,627 Open Positions" },
+
+];
+
+
+
 
 const jobs = Array(6).fill({
   title: "Technical Support Specialist",
@@ -125,11 +167,12 @@ const Home = () => {
             <p className="text-gray-600 mt-4">
               Aliquam vitae turpis in diam convallis finibus <br /> in at risus.
               Nullam in scelerisque leo, eget sollicitudin
+          
             </p>
 
             <div className="mt-8 p-1 rounded-lg md:w-160 flex border border-gray-300">
               <input
-                type="text" // Or type="search" if you prefer
+                type="text"
                 placeholder="Job, Title, Keyword"
                 className="rounded-lg md:w-130 p-3  flex-grow"
               />
@@ -137,24 +180,99 @@ const Home = () => {
                 Find Job
               </button>
             </div>
+            <p className="text-[#000000CC] flex text-xl">
+              Suggestion:Designer,Programing,
+              <h1 className="text-[#8526FF] flex"> Digital Marketing,</h1>
+              Vedio,Animation
+            </p>
           </div>
           <div>
             <img src={job} alt="Job Search" className="w-full max-w-md" />
           </div>
         </div>
 
-        <div className="bg-gray-100 min-h-screen p-4 mt-30 ">
+        <section>
+          <div className="flex justify-center gap-7 p-3 mt-19">
+            {stats.map((stat, index) => (
+               
+              <div
+                key={index}
+                className="flex items-center gap-4 px-1 w-100  bg-gray-100 shadow-md rounded-lg"
+              >
+                <div className="p-6 py-5 bg-purple-200 rounded-lg pr-9">
+                  <img
+                    src={stat.image}
+                    alt={stat.label}
+                    className="w-11 h-8  rounded-2xl "
+                  />
+                </div>
+                <div>
+                  <p className="text-xl font-semibold">{stat.number}</p>
+                  <p className="text-gray-500">{stat.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+        <div className="max-w-6xl mx-auto mt-30">
+      <h2 className="text-2xl font-bold mb-6 ">Most Popular Vacancies</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-22 py-6">
+        {jobCategories.map((category, index) => (
+          <div
+            key={index}
+            className="  rounded-lg  hover:shadow-xl transition-shadow duration-300"
+          >
+            <h3 className="text-lg font-bold text-gray-800 ">{category.title}</h3>
+            <p className="text-sm text-[#344054] ">{category.positions} Open Positions</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className=" min-h-screen p-5 mt-30 ">
           <div className="max-w-6xl mx-auto">
-            <section className="mb-6 mt-3">
+            <section className="mb-6 mt-4">
               <h2 className="text-2xl font-bold mb-4">Popular Categories</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-7">
                 {categories.map((category, index) => (
                   <div
                     key={index}
-                    className="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4 hover:shadow-lg transition-shadow duration-300"
+                    className="bg-gray-100  p-3 rounded-lg shadow-md flex items-center space-x-5 hover:shadow-lg transition-shadow duration-300"
                   >
                     {category.icon && (
-                      <div className="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                      <div className="w-13 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                         {category.icon}
                       </div>
                     )}
@@ -175,11 +293,11 @@ const Home = () => {
           <h2 className="text-2xl font-bold   mt-7 pl-14">
             Recent Jobs Posted
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-9 p-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-12">
             {jobs.map((job, index) => (
               <div
                 key={index}
-                className="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between"
+                className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col justify-between"
               >
                 <div>
                   <h3 className="text-lg font-bold">
@@ -216,7 +334,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="mt-20 py-24 flex flex-col">
+        <section className="mt-2 flex flex-col">
           <div>
             <div className="flex flex-col items-center gap-5 text-center">
               <h1 className="text-xl lg:text-2xl font-[600]">

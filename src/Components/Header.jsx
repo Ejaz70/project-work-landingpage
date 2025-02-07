@@ -5,7 +5,7 @@ const Header = () => {
     <nav className="bg-white shadow-md py-4 px-6">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-semibold text-indigo-600 cursor-pointer">Logo </div>
- <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
+         <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
           <li className=" hover:text-indigo-600">Home</li>
           <li className=" hover:text-indigo-600">Menu</li>
           <li className=" hover:text-indigo-600">About Us</li>
